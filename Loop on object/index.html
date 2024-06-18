@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p class="news"></p>
+        <p class="news_1"></p>
+
+        <script>
+            let news1 = {   //object
+
+                //p:v
+                w1:"Shekhar Suman",  //string 
+                w2:"was in ",
+                w3:"the ,",
+                w4:' Bigg Boss ',
+                w5:`16 house`,
+                w6:"on Sunday",
+                w8:`with yet`,
+                w9:"another bulletin,"
+                //methods
+            }
+            document.querySelector("p.news").innerHTML = "hello " + news1.w1 +''+news1.w2 + '' + news1.w3 + '' + news1.w4+''+ news1.w5+''+ news1.w6 + '' + news1.w7+''+ news1.w8 + '' + news1.w9
+            //console.log(news1.w1);
+            let news2 = {
+                //p:v
+                w1:"BJP ",  //string 
+                w2:"to retain ",
+                w3:"Gujarat,",
+                w4:' Himachal;  ',
+                w5:`Cong`,
+                w6:"beaten",
+                w7:'again,',
+                w8:`AAP`,
+                w9:"flops:",
+                w10:" Exit polls"
+                //methods
+            }
+
+            //for in loop
+            /*for (key in object) {
+                // code block to be executed
+                }*/
+            let headline = '';
+            
+            for(x in news2){
+                headline += news2[x];
+            }
+            //console.log(news2);
+            document.querySelector("p.news_1").innerHTML = headline;
+        </script>
+
+    </body>
+</html>

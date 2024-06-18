@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Strict mode</title>
+    </head>
+    <body>
+        
+
+        <script>
+            
+            // "use srtict" isn't a statement,its a literal expression
+            "use strict";
+
+            // we can't use a variable in usesrtict mode without declaring it 
+            
+            // x = 30;  it will couse and error
+            let x;
+            x = 30;
+            // y = 20;  it will couse and error
+            let y=20;
+           
+            
+            function sub(){
+                console.log(x+y);
+            }
+            sub();
+
+            //we cant use an object without declaring it,objects are also  variables
+
+            //friends = {frnd1:payal}     "its not allowed"
+
+            let friends = {frnd1:"payal"};
+            console.log(friends.frnd1);
+
+            //deleting an onject/variable and a function isnt allowed  in strict mode
+
+            var a = 'anjali';
+            //delete can't be called a variable in srict mode same for obj and func
+             
+            //delete a;  
+            //console.log(a)
+             
+            //let n = 0102;    //octal literal(010) arent allowed in strict mode
+            //console.log(n);
+        </script>
+    </body>
+</html>

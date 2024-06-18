@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>js</title>
+
+        <link rel="stylesheet" href="./css/style.css" />
+        <style>
+
+            /* css inside head tag*/
+        </style>
+        <script src="./js/script.js">//relative linking</script>
+        <script>
+            //js code  inside head tag
+            //console.log('inside the head tag'); //statement
+
+            let q = 2.5;   //float
+            console.log(q+' is a '+ typeof q + ' type datatype');
+        </script>
+    
+    </head>
+    <body>
+        <p id="a_id"></p>
+        <p id="ok"></p>
+
+        <script>
+             //js inside body tag
+            //variable  "var"  var is a global variable
+
+            var a = 'helloo!' ;   //string
+
+            //console.log(a);
+           // window.alert(a);
+
+            a = "helllo anjali";   //we can reinitionlize var variable
+            //console.log(a);
+
+            var a = "how are you anjali"  // we can redeclare same variable in by var
+            console.log(a);
+            //console.log('inside the body tag');
+
+            document.getElementById("ok").innerHTML = a;
+
+            document.getElementById("a_id").innerHTML="data type of y is "+typeof y;
+        </script>
+        
+    </body>
+</html>

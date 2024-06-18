@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>basic caculator</title>
+        <style>
+            span{
+                display: inline-block;
+                width:5+0px;
+                height: 16px;
+                border: 1px solid black;
+                margin-top: 5px;
+            }
+        </style>
+    </head>
+    <body style="margin: 0px;">
+    
+        <form style="display:inline-block">
+            <input type="text" name="number1" size="3">
+            <select name="oprator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="text" name="number2" size="3">
+            <input type="button" value="total" onclick="calculator()" />
+        </form>
+        <span id="result"></span>
+
+        <script>
+            //global variable
+
+            //object.method
+            let no1 = document.querySelector('input[name="number1"]'); //attribute selecor
+            let no2 = document.querySelector('input[name=\'number2\']'); // here \ is a scape charactor
+
+            //console.log(typeof no1.value);
+            //console.log(typeof no2.value);
+
+            
+
+            let op = document.querySelector('select[name="oprator"]');
+
+            //console.log(op.value);
+
+            let reslt = document.getElementById('result');
+
+            //console.log(reslt);
+
+            //function
+            function calculator(){      //formal argument
+
+                let n1 = parseFloat(no1.value);
+                let n2 = parseFloat(no2.value);
+
+                //console.log(typeof n1);
+                //console.log(typeof n2);
+
+
+                //switch case statement
+                /*switch (expresstion){
+                    case1:
+                        code block
+                        break;
+                    case2:
+                        code block
+                        break;
+                    default:
+                        code block
+                }*/
+
+                //console.log(typeof number1)
+                //console.log(op.value);
+                //console.log(n1);
+                switch (op.value) {
+                    case '+':
+                        //console.log(n1+n2);
+                        reslt.innerHTML = n1 + n2;
+                        break;
+                    case '-':
+                        reslt.innerHTML = n1 - n2;
+                        break;
+                    case `*`:
+                        reslt.innerHTML = n1 * n2;
+                        break;
+                    case "/":
+                        reslt.innerHTML = n1 / n2;
+                        break;
+                    default:
+                        console.log('Invalid opration');
+                }
+                
+            }
+        </script>
+    </body>
+</html>

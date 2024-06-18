@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>js events</title>
+    </head>
+    <!--this event works only for body and forms .....
+    this one works when we press any key-->
+    <body onload="hello8()">
+        <h1>helllo ! welcome </h1>
+        <h1 id="demo"></h1>
+        <!--
+            same for other events=>
+
+            on click event (onclick),
+            double click event (ondblclick),
+            right click event (oncontextmenu),
+            mouse hover event (onmouseenter),
+            mouse out event (onmouseout),
+            mouse down event (onmousedown),
+            mouse up event (onmouseup),
+
+            these events works only for body and form tag =>
+            
+            key press event (onkeypress),
+            key up event (onkeyup),
+            laod event (onload),
+            unload event (onunload),
+            resize event (onresize),
+            scroll event (onscroll)
+        -->
+        
+        <!--
+            on right click event (oncontextmenu)
+            this event calls a funcion on the right click
+        -->
+        <p class="ok" oncontextmenu="hello3()"></p>
+        
+    
+        <!-- on click event (onclick)
+        this event calls a function on click -->
+        <button onclick="hello()">click me</button>
+
+        <br><br>
+        <!-- double click event (ondblclick)
+        this one calls a function on double click-->
+        <button ondblclick="hello2('anjali','rathor')">click me twice</button>
+
+        
+
+        <!-- mouse hover event (onmousenter)
+        this one calls a function when we hover mouse on that element--> 
+        <br><br>
+        <button onmouseenter="hello4()">mouse enter</button>
+
+        <!-- mouse out event(onmouseout)
+        this one calls a function when we move mouse away from the element--> 
+        <br><br>
+        <button onmouseout="hello5()">mouse out</button>
+
+        <!-- mouse down event(onmousedown)
+        this one calls a function when we click the element
+        this one works same as click event--> 
+        <br><br>
+        <button onmousedown="hello6()">mouse down</button>
+
+         <!-- mouse up event(onmouseup)
+        this one calls a function when we lift mouse from the element--> 
+        <br><br>
+        <button onmouseup="hello7()">mouse up</button>
+
+        
+
+        <script src="./script.js"></script>
+    </body>
+</html>

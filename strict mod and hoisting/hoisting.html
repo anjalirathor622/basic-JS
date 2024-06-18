@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>hoisting</title>
+    </head>
+    <body>
+        <h1 id="demo"></h1>
+        <h1 id="demo2"></h1>
+        
+        <script>
+           
+            //hoisting method
+            /* hoisting is javascrit default behavior of moving all declaration to the top of the current scope.
+            */
+            //a var variable can be used before it has been declared, let and const doesnt support this technique
+
+            "use strict";     //hoisting works for strict mode as well
+            x=100;   //initializing a variable
+
+            element = document.getElementById('demo');
+            element.innerHTML = x;    //using the x variable 
+
+            var x;   //after use delcaring the element
+
+            //but hoisting doesnt work for let and const 
+
+            /*
+             this is not allowed
+
+            y=20;
+            let y;
+              or
+            const y;
+
+            */
+            const z = 200;  //in const we have to declare and initial together
+            element = document.getElementById('demo2');
+            element.innerHTML = z;   
+        </script>
+    </body>
+</html>
