@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>CRUD</title>
+        <script>
+
+        </script>
+    </head>
+    <body>      
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                <span id="fname"></span>
+                <br></br>
+                <span id="fsname"></span>
+                <br></br>
+                <span id="faddr"></span>
+                </div>
+            
+            </div>
+            </div>
+        </div>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <td>name</td>
+                    <td>surname</td>
+                    <td>address</td>
+                </tr>
+            </thead>
+        </table>
+        <style>
+
+        </style>
+        <script>
+            const form =  document.createElement('form')
+            form.setAttribute("id","myform")
+            const body = document.querySelector("body")
+            let input = document.createElement("input")
+            let input2 = document.createElement("input")
+            let input3 = document.createElement("input")
+
+            var appndform =body.appendChild(form)
+            appndform.appendChild(input).placeholder = "enter your name" 
+            appndform.appendChild(input2).placeholder = "enter your surname"
+            appndform.appendChild(input3).placeholder = "enter address"
+            
+            let btn = document.createElement("button")
+            body.appendChild(form).appendChild(btn)
+            btn.setAttribute("id","mybtn")
+            btn.setAttribute("type","button")
+            btn.setAttribute("onclick","func()")
+            document.getElementById("mybtn").value = "button";
+            btn.innerHTML = "submit"
+            
+            let btn2 = document.createElement("button")
+            body.appendChild(form).appendChild(btn2)
+            btn2.setAttribute("id","mydel")
+            btn2.setAttribute("type","button")
+            btn2.setAttribute("onclick","del()")
+            document.getElementById("mybtn").value = "button";
+            btn2.innerHTML = "delete"
+            const hr = document.createElement("hr")
+            
+            body.appendChild(hr)
+            
+            const table1 = document.createElement('table')
+            table1.setAttribute("id","mytable")
+            body.appendChild(table1) 
+            table1.style.border ="1px solid black"
+
+           var btnclick = document.getElementById("mybtn")
+                function func(e){
+                        
+                        var row1 = table1.insertRow(0)
+                        let cell1 = row1.insertCell(0)
+                        let cell2 = row1.insertCell(1)
+                        let cell3 = row1.insertCell(2)
+                        
+                        cell1.innerHTML = input.value;
+                        cell2.innerHTML = input2.value;
+                        cell3.innerHTML = input3.value;
+                        
+                        let cell4 = row1.insertCell(3)
+                        let btn3 = document.createElement("button")
+                        btn3.innerHTML = "read"
+                        cell4.appendChild(btn3)
+                        btn3.setAttribute("id","myread")
+                        btn3.setAttribute("type","button")
+                        btn3.setAttribute("data-toggle","modal")
+                        btn3.setAttribute("data-target","#exampleModal")
+                        btn3.setAttribute("onclick","read()")
+                            
+                        let cell5= row1.insertCell(4)
+                        let btn4 =document.createElement("button")
+                        cell5.appendChild(btn4)
+                        btn4.innerHTML = "update"
+                        btn4.setAttribute("id","myupdate")
+                        btn4.setAttribute("type","button")
+                        btn4.setAttribute("onclick","upd(this)")
+
+                        let cell6 = row1.insertCell(5)
+                        let btn5 = document.createElement("button")
+                        cell6.appendChild(btn5)
+                        btn5.innerHTML="delete"
+                        btn5.setAttribute("type","button")
+                        btn5.setAttribute("id","delbtn")
+                        btn5.setAttribute("onclick","del(this)")
+                }
+                function del(z){                     
+                    z.closest('tr').remove();
+                    console.log(z.closest('tr'))
+                }
+                 function upd(elem){
+                     var tt = prompt("enter your name");
+                     //console.log(tt)
+                    if(tt != ''){
+                        //console.log("okk")
+                        let a =document.querySelector("#mytable tbody:first-child").children[0];
+                        let b = document.createTextNode(tt)
+                        a.replaceChild(b, a.childNodes[0]);
+                        a.replaceChild(a)= tt;
+                        //a.append(tt);
+                        //console.log(a)
+
+                        //document.querySelector("mytable tbody tr first-child").innerHTML =b
+                        //console.log(b)
+                    }else{
+                        alert("enter name")
+                        //return prompt("enter your name")
+                    }
+                    
+                    //prompt("enter your surname")
+                    //prompt("enter your address")
+                }
+                 function read(){
+                    let rd= document.querySelector("#fname")
+                    let rd2= document.querySelector("#fsname")
+                    let rd3= document.querySelector("#faddr")
+                    rd.innerHTML = input.value
+                    rd2.innerHTML = input2.value
+                    rd3.innerHTML = input3.value
+                }  
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
