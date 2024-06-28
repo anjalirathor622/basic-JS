@@ -1,4 +1,4 @@
-console.log('hello');
+// console.log('hello');
 
 //creating an object using object literals 
 let car = {
@@ -10,7 +10,7 @@ let car = {
     }
 }
 car.details();
-console.log(car.name);
+// console.log(car.name);
 console.log(car);
 
 
@@ -39,6 +39,6 @@ buggati.highspeed();
 thar.run();
 thar.highspeed();
 
-console.log(buggati);
+// console.log(buggati);
 console.log(thar);
-console.log(mercedes);
+// console.log(mercedes);
