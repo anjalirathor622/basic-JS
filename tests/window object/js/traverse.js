@@ -1,4 +1,4 @@
-console.log('Welcome to tutorial 15');
+console.log('Welcome');
 
 let cont = document.querySelector('.no');
 cont = document.querySelector('.container');
