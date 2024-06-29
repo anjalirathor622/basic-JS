@@ -1,0 +1,79 @@
+(1) createElement():-
+    The document.createElement() is a method used to create the HTML element. createElement()
+    The syntax is :
+            let div = document.createElement('div');
+
+(2) createTextNode():-
+    The document.createTextNode() is a method used to create the text.After the Text Node is created, 
+    use the element.appendChild() method to append it to an element.
+    The syntax is :
+            var paragraph = document.createElement("P");                
+            var text = document.createTextNode("This is a paragraph.");       
+            paragraph.appendChild(text);  
+
+(3) createComment():-
+    The document.createComment() is a method used to create the comments.
+    The syntax is :
+            var comment = document.createComment("This is a comment.")
+
+* Working with Attributes:- 
+    (1) setAttribute() :-
+        The setAttribute() method is used to set an attribute on the specified element. 
+        Using this method, a new attribute is added with the specified name and value. 
+        If the attribute already exists on the element, the value is updated.
+        The syntax is :
+            document.getElementById("id").setAttribute("name", "value");
+
+    (2) getAttribute() :-
+        The getAttribute() method is used to get the current value of a attribute on the 
+        specified element. If the attribute does not exist on the element, it will return null.
+        The syntax is :
+                document.getElementById("id").getAttribute("name");
+
+    (3) hasAttribute():-
+        The hasAttribute() method is used to check an element has a specified attribute or not. 
+        The syntax is :
+                element.hasAttribute(name);
+    
+    (4) removeAttribute() :-
+        The removeAttribute() method is used to remove an attribute from the specified element. 
+        The difference between this method and the removeAttributeNode() method is that 
+        the removeAttributeNode() method removes the specified Attr object, while this 
+        method removes the attribute with the specified name. The result will be the same. 
+        Also this method has no return value, while the removeAttributeNode() method returns 
+        the removed attribute as an Attr object.
+         The syntax is :
+                document.getElementById("id").removeAttribute("name");
+    
+    *we can give class name and id to elements like this: 
+        element.className = "classname"
+        element.id = "id"
+
+(4) replaceWith():- 
+    The replaceWith() method replaces this ChildNode in the children list of its parent with 
+    a set of Node.
+        The example is :
+            let element1 = document.getElementById("myid1 ");
+            let element2 = document.createElement("u");
+            let content = document.createTextNode("Added Content");
+            element2.appendChild(content); 
+            element1.replaceWith(element2);
+
+(5) replaceChild():-
+    The replaceChild() method replaces a child node with a new node. We can create a new node,
+    or The new node could be an existing node in the document or the new node could be an 
+    existing node in the document. In the following example, we will replace an existing 
+    node sp2 with the new span element sp1:
+    The example is :
+            parentDiv.replaceChild(sp1, sp2);
+
+(6) removeChild():-
+    This method removes a specified child node of the specified element. It will return the 
+    removed node as a Node object, or null if the node does not exist. Remember that the 
+    removed child node is no longer part of the DOM. In the following example, we will find 
+    out if a list has any child nodes. If so, remove its second child node.
+    The example is :
+            let list = document.getElementById("myList");
+            if (list.hasChildNodes()) {
+            list.removeChild(list.childNodes[1]);
+            }
