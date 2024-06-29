@@ -1,0 +1,65 @@
+in DOM before we perform any action like change style or add animation
+ our first task is to need to find or select the target HTML element. 
+ to select an element there are two types of selectors:
+ 1. single element selector
+ 2. multiple elements selector
+
+(1) Single Element Selector:- 
+    It is used to select single HTML elements within a document. 
+    Following are some single element selectors:
+1.1 getElementById(): method of the document object. It will return null if no elements 
+        with the specified ID exists.An ID should be unique within a page. However, 
+        if more than one element with the specified ID exists, the getElementById() 
+        method returns the first element in the source code.
+
+            document.getElementById(elementID);
+
+<h1 id="demo">Heading 1</h1>
+var x = document.getElementById("demo");
+x.style.color = "red";
+x.className;
+x.childNodes;
+x.parentNode;
+x.innerText = 'JavaScript Tutorial';
+x.innerHTML = '<b>Harry is a good boy</b>';
+        
+    Explanation of above Example:-
+
+=>className: The className property sets or returns the class name of an element
+=>childNodes: The childNodes property returns a collection of a node's child nodes.
+=>parentNode: The parentNode property returns the parent node of the specified node.
+=>innerText: The innerText property sets or returns the text content of the specified node.
+=>innerHTML: The innerHTML property sets or returns the HTML content of an element.
+
+1.2 QuerySelector:-It will return the first element that matches the specified CSS 
+        selector in the document. The querySelector() method only returns the first element 
+        that matches the specified selectors.
+
+document.querySelector('#myclass');
+document.querySelector('.myclass');
+document.querySelector('li');
+
+(2) Multiple Element Selector:-
+        It is used to select multiple HTML elements within a document. 
+        There are three ways in which we can select elements in a DOM 
+        using multiple element selectors.
+
+2.1 querySelectorAll():It will return a list of the document's elements that match the 
+    specified group of selectors. The querySelectorAll() method returns all elements in the 
+    document as a static NodeList object. The NodeList object represents a collection of nodes. 
+    The nodes can be accessed by index numbers. The index starts at 0.
+
+document.querySelectorAll('.heading')
+It will return a list of all elements that matches the specified CSS selector. 
+
+document.querySelectorAll("p.animation ");
+It will return all <p> elements in the document with class="animation"
+
+2.2 getElementsByTagName(): We can also select HTML elements with their tag name
+    by using getElementsByTagName() method.
+
+    document.getElementsByTagName('tagname');
+
+2.3 getElementsByClassName():we can get all the elements with a given class name. 
+
+    document.getElementsByClassName(class_name);
