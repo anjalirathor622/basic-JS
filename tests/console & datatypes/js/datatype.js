@@ -1,9 +1,9 @@
 // Primitive data types:- string, number, boolean, null, undefined.
 
 // String
-let name = "harry";
-console.log("My string is " + name);
-console.log("Data type is " + (typeof name));
+let MyName = "Anjali";
+console.log("My string is " + MyName);
+console.log("Data type is " + (typeof MyName));
 
 // Numbers
 let marks = 34.4;
@@ -35,11 +35,13 @@ let stMarks = {
 }
 console.log( typeof stMarks);
 
+//function
 function findName() {
     
 }
 console.log( typeof findName);
 
+//date
 let date = new Date();
 console.log( typeof date);
 
