@@ -1,0 +1,13 @@
+(1) appendChild(): this is a method to append aalrady created new element to the document.
+        if we append it to an existing element then this will appended at last index of that element
+        but  if we append it to document then it will be added just before end of body tag.
+        the syntax is:
+                element.appendChild(newElement)
+
+(1) insertBefore(): this is a method to append alrady created new element to the specific place
+        like before any element.
+        the syntax is:
+                element.insertBefore(newElement, targetElement);
+        here we have to give two arguments: 
+        1. new element which we want to insert.
+        2. target element before we want our new element to be inserted.
